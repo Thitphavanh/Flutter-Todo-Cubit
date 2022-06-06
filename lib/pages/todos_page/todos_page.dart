@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_todo_cubit/cubits/active_todo_count/active_todo_count_cubit.dart';
-import 'package:flutter_todo_cubit/pages/create_todo.dart';
+import 'package:flutter_todo_cubit/pages/todos_page/create_todo.dart';
 
 import 'todo_header.dart';
 
@@ -24,7 +24,7 @@ class _TodosPageState extends State<TodosPage> {
               vertical: 40.0,
             ),
             child: Column(
-              children: [
+              children: const [
                 TodoHeader(),
                 CreateTodo(),
               ],
