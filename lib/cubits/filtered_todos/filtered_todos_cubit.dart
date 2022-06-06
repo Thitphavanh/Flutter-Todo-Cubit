@@ -2,6 +2,7 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_todo_cubit/cubits/todo_filter/todo_filter_cubit.dart';
 import 'package:flutter_todo_cubit/cubits/todo_list/todo_list_cubit.dart';
 import 'package:flutter_todo_cubit/cubits/todo_search/todo_search_cubit.dart';
@@ -14,14 +15,17 @@ class FilteredTodosCubit extends Cubit<FilteredTodosState> {
   late StreamSubscription todoSearchSubscription;
   late StreamSubscription todoListSubscription;
 
+  final List<Todo> initialTodos;
+
   final TodoFilterCubit todoFilterCubit;
   final TodoSearchCubit todoSearchCubit;
   final TodoListCubit todoListCubit;
   FilteredTodosCubit({
-   required  this.todoFilterCubit,
-   required  this.todoSearchCubit,
-   required  this.todoListCubit, 
-  }) : super(FilteredTodosState.initial()) {
+    required this.initialTodos,
+    required this.todoFilterCubit,
+    required this.todoSearchCubit,
+    required this.todoListCubit,
+  }) : super(FilteredTodosState(filteredTodos: initialTodos)) {
     todoFilterSubscription =
         todoFilterCubit.stream.listen((TodoFilterState todoFilterState) {
       setFilteredTodos();

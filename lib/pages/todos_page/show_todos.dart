@@ -19,9 +19,12 @@ class ShowTodos extends StatelessWidget {
         );
       },
       itemBuilder: (BuildContext context, int index) {
-        return Text(
-          todos[index].desc,
-          style: const TextStyle(fontSize: 20.0),
+        return Dismissible(
+          key: ValueKey(todos[index].id),
+          child: Text(
+            todos[index].desc,
+            style: const TextStyle(fontSize: 20.0),
+          ),
         );
       },
     );
