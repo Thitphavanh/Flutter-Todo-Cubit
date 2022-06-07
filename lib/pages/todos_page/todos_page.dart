@@ -26,7 +26,7 @@ class _TodosPageState extends State<TodosPage> {
               vertical: 40.0,
             ),
             child: Column(
-              children: const [
+              children: [
                 TodoHeader(),
                 CreateTodo(),
                 SizedBox(height: 20.0),
