@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_todo_cubit/blocs/bloc.dart';
 import '../../models/todo_model.dart';
+import '../todo_list/todo_list_bloc.dart';
 part 'active_todo_count_event.dart';
 part 'active_todo_count_state.dart';
 
